@@ -1,0 +1,68 @@
+.social {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 30px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 584px;
+    height: 73px;
+    left: 436px;
+    top: 65px;
+    font-family: "New Spirit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 61px;
+    line-height: 120%;
+
+    background: linear-gradient(90deg, #3136c8 0%, #c26a6f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .social_links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+
+    .svg_twitter {
+      background-image: url("/assets/twitter.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      background-size: 70%;
+    }
+
+    .svg_instagram {
+      background-image: url("/assets/instagram.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      background-size: 70%;
+    }
+
+    .svg_tiktok {
+      background-image: url("/assets/tiktok.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      background-size: 50%;
+    }
+
+    .svg_youtube {
+      background-image: url("/assets/youtube.png");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      background-size: 65%;
+    }
+  }
+}

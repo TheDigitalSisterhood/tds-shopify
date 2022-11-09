@@ -15,12 +15,10 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  --white: #ffffff;
+  --blue: #3437b9;
+  --purple: #4548cb;
+  --pageWidth: 1200px;
+  --textColor: var(--white);
 }

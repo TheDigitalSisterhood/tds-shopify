@@ -6,7 +6,7 @@ import { gql, useShopQuery } from "@shopify/hydrogen";
 import styles from "../styles/Home.module.css";
 import strings from "../lib/strings";
 
-export default function Home() {
+export default function Podcast() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <span>Home Content</span>
+        <span>Podcast</span>
       </main>
     </div>
   );
