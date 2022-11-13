@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -13,12 +14,44 @@ export default function Header({
 }: {
   onSearchPressed: () => void;
 }) {
+  const [cartVisible, setCartVisible] = useState(false);
+
   const handleSearchClick = (e: any): void => {
     e.preventDefault();
     onSearchPressed();
   };
+
+  const toggleShoppingCart = (e: any): void => {
+    e.preventDefault();
+    setCartVisible(!cartVisible);
+  };
+
+  const ShoppingCartView = ({ toggle }: { toggle: (e: any) => void }) => {
+    return (
+      <div className={styles.cart}>
+        <div onClick={toggle} className={styles.curtain}></div>
+        <div className={styles.body}>
+          <div className={styles.close}>
+            <Link href="#" onClick={toggle}>
+              <i className="material-symbols-outlined">close</i>
+            </Link>
+          </div>
+          <div className={styles.bag}>
+            <div className={styles.empty}>
+              <h4>Your cart is empty</h4>
+              <Button onClick={toggle} variant="primary">
+                Continue Shopping
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.main}>
+      {cartVisible && <ShoppingCartView toggle={toggleShoppingCart} />}
       <div className={styles.subMenu}>
         <ul className={styles.icons}>
           <li>
@@ -32,7 +65,7 @@ export default function Header({
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/" onClick={toggleShoppingCart}>
               <i className="material-symbols-outlined">shopping_bag</i>
             </Link>
           </li>
