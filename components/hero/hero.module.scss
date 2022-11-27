@@ -1,8 +1,44 @@
 .main {
   display: flex;
+  position: relative;
 
-  .image {
+  .cover {
     display: flex;
     flex: 1;
+    position: relative;
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+
+    &.left {
+      align-items: flex-start;
+    }
+
+    &.center {
+      align-items: center;
+    }
+
+    &.right {
+      align-items: flex-end;
+    }
+
+    .title {
+      display: flex;
+      font-size: 4rem;
+      font-weight: bold;
+      color: var(--textColor);
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: calc(var(--pageWidth) - 200px);
+    }
   }
 }

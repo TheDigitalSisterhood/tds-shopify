@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 
@@ -11,9 +12,12 @@ import styles from "./header.module.scss";
 
 export default function Header({
   onSearchPressed,
+  color,
 }: {
   onSearchPressed: () => void;
+  color?: string;
 }) {
+  const router = useRouter();
   const [cartVisible, setCartVisible] = useState(false);
 
   const handleSearchClick = (e: any): void => {
@@ -26,13 +30,18 @@ export default function Header({
     setCartVisible(!cartVisible);
   };
 
-  const ShoppingCartView = ({ toggle }: { toggle: (e: any) => void }) => {
+  const ShoppingCartView = ({
+    toggle,
+  }: {
+    toggle: (e: any) => void;
+  }): ReactElement<any, any> => {
     return (
       <div className={styles.cart}>
         <div onClick={toggle} className={styles.curtain}></div>
-        <div className={styles.body}>
-          <div className={styles.close}>
-            <Link href="#" onClick={toggle}>
+        <div className={styles.pane}>
+          <div className={styles.head}>
+            <div className={styles.title}></div>
+            <Link href="#" className={styles.close} onClick={toggle}>
               <i className="material-symbols-outlined">close</i>
             </Link>
           </div>
@@ -71,7 +80,7 @@ export default function Header({
           </li>
         </ul>
       </div>
-      <div className={styles.content}>
+      <div className={styles.content} style={{ background: color }}>
         <div className={styles.wrap}>
           <div className={styles.menu}>
             <div className={styles.logo}>
@@ -112,7 +121,7 @@ export default function Header({
                     Support
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu align="end" variant="dark">
+                  <Dropdown.Menu align="end" variant="light">
                     <Dropdown.Item href="#/donate/ethereum">
                       Ethereum
                     </Dropdown.Item>

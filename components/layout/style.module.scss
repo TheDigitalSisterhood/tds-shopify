@@ -1,8 +1,23 @@
 .container {
-  background: rgb(220, 151, 81);
-  background: linear-gradient(
-    0deg,
-    rgba(220, 151, 81, 1) 0%,
-    rgba(167, 88, 86, 1) 100%
-  );
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &.home {
+    background: #dc9751;
+    background: linear-gradient(
+      0deg,
+      rgba(220, 151, 81, 1) 0%,
+      rgba(167, 88, 86, 1) 100%
+    );
+  }
+
+  &.community {
+    background: rgb(114, 140, 125);
+    background: linear-gradient(
+      0deg,
+      rgba(114, 140, 125, 1) 0%,
+      rgba(235, 200, 211, 1) 100%
+    );
+  }
 }

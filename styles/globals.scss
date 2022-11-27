@@ -1,3 +1,4 @@
+@import "./mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html,
@@ -22,6 +23,14 @@ a {
   --black: #212121;
   --blue: #3437b9;
   --purple: #4548cb;
+  --gray: #aaa;
   --pageWidth: 1200px;
   --textColor: var(--white);
+  --zIndex100: 100;
+  --zIndex200: 200;
+  --zIndex300: 300;
+  --zIndex400: 400;
+  --zIndex500: 500;
+  --zIndex600: 600;
+  --zIndex700: 700;
 }

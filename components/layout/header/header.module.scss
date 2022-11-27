@@ -3,6 +3,7 @@
   flex-direction: column;
   position: sticky;
   top: 0;
+  z-index: var(--zIndex100);
 
   .cart {
     display: flex;
@@ -19,12 +20,12 @@
       top: 0;
       z-index: 1000;
       opacity: 0;
-      animation: cartFadeIn 0.5s 1;
+      animation: cartFadeIn ease-in-out 0.3s 1;
       animation-fill-mode: forwards;
     }
 
-    .body {
-      animation: cartSlideIn 0.5s 1;
+    .pane {
+      animation: cartSlideIn ease-in-out 0.3s 1;
       animation-fill-mode: forwards;
       background: var(--black);
       border-radius: 10px;
@@ -35,12 +36,13 @@
       padding: 20px;
       position: fixed;
       top: 15px;
-      right: -400px;
+      right: 20px;
+      transform: translateX(420px) translateZ(0);
       height: calc(100vh - 30px);
       width: 400px;
       z-index: 1200;
 
-      .close {
+      .head {
         display: flex;
         justify-content: flex-end;
 
@@ -63,6 +65,10 @@
           color: var(--white);
         }
       }
+    }
+
+    &.out :is(.curtain, .pane) {
+      pointer-events: none;
     }
   }
 
@@ -92,7 +98,6 @@
   }
 
   .content {
-    background: rgba(167, 88, 86, 0.9);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.8px);
     -webkit-backdrop-filter: blur(9.8px);
@@ -172,10 +177,10 @@
 
 @keyframes cartSlideIn {
   from {
-    right: -400px;
+    transform: translateX(420px);
   }
   to {
-    right: 20px;
+    transform: translateX(0px);
   }
 }
 

@@ -1,12 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 
+import Map from "../components/map";
 import { gql, useShopQuery } from "@shopify/hydrogen";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Community.module.scss";
 import strings from "../lib/strings";
 
-export default function Home() {
+export default function Community() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <span>Community</span>
+        <div className={styles.banner}>
+          <h1 className={styles.title}>Our Community</h1>
+          <div className={styles.globe}>
+            <Map />
+          </div>
+        </div>
       </main>
     </div>
   );
