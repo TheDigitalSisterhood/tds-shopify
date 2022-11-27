@@ -1,0 +1,44 @@
+.main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--pageWidth);
+
+    .title {
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+    }
+
+    .grid {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 100%;
+
+      .box {
+        background: #eee;
+        border-radius: 25px;
+        display: flex;
+        flex: 1;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -17,7 +17,7 @@ export default function Header({
   onSearchPressed: () => void;
   color?: string;
 }) {
-  const router = useRouter();
+  const headerRef: any = useRef(null);
   const [cartVisible, setCartVisible] = useState(false);
 
   const handleSearchClick = (e: any): void => {
@@ -80,7 +80,11 @@ export default function Header({
           </li>
         </ul>
       </div>
-      <div className={styles.content} style={{ background: color }}>
+      <div
+        className={styles.content}
+        style={{ background: color }}
+        ref={headerRef}
+      >
         <div className={styles.wrap}>
           <div className={styles.menu}>
             <div className={styles.logo}>
@@ -121,7 +125,7 @@ export default function Header({
                     Support
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu align="end" variant="light">
+                  <Dropdown.Menu align="end" variant="dark">
                     <Dropdown.Item href="#/donate/ethereum">
                       Ethereum
                     </Dropdown.Item>

@@ -11,6 +11,7 @@ import { gql, useShopQuery } from "@shopify/hydrogen";
 import styles from "../styles/Home.module.scss";
 import strings from "../lib/strings";
 import GenericSection from "../components/GenericSection";
+import BandView from "../components/Band";
 
 export default function Home() {
   const slogan = (
@@ -47,6 +48,12 @@ export default function Home() {
         <GenericSection className={styles.slogan}>
           <h1 className={styles.text}>{slogan}</h1>
         </GenericSection>
+        <BandView theme="blue">
+          <h1>AS SEEN ON</h1>
+        </BandView>
+        <BandView theme="red">
+          <h1>BuzzFeed News</h1>
+        </BandView>
       </main>
     </div>
   );
