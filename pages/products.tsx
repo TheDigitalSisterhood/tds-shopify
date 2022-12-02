@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { gql, useShopQuery } from "@shopify/hydrogen";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import strings from "../lib/strings";
 
 export default function Products() {
